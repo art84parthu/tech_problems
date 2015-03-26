@@ -31,7 +31,7 @@ public class SortedArrayCompare {
 			}
 		}
 		
-		common = ArrayUtil.trimArr(common, i+1);
+		common = ArrayUtil.trimArr(common, i);
 		
 		return common;
 	}
