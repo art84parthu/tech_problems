@@ -3,11 +3,9 @@ package coding.interviews.linkedlist;
 public class SinglyLinkedList {
 
 	private Node head;
-	private Node tail;
-	
 	
 	public SinglyLinkedList(){
-		head = tail = null;
+		head = null;
 	}
 	
 	public boolean insertElement(int position, int value){
@@ -35,18 +33,34 @@ public class SinglyLinkedList {
 		
 		if(position == 0 && pos == position){
 			elem = new Node(value, cur);
-			if(head == tail && head == null){
-				head = tail = elem;
+			if(head == null){
+				head = elem;
 			}
 			return true;
 		}
-		if(pos == position && prev == tail && tail != null){
+		if(pos == position && prev.getNext() == null){
 			elem = new Node(value, cur);
 			prev.setNext(elem);
-			tail = elem;
 			return true;
 		}
 		return false;
+	}
+	
+	public static void main(String[] args){
+		SinglyLinkedList list = new SinglyLinkedList();
+		list.insertElement(0, 1);
+		list.insertElement(1, 4);
+		list.insertElement(1, 1);
+		list.insertElement(3, 5);
+		list.insertElement(2, 6);
+		list.insertElement(5, 8);
+		
+		
+		ListUtil.printList(list.head);
+		
+		int m = 1;
+		System.out.print("\n" + m + "th node from last = ");
+		System.out.print(MthFromLastNode.mthFromLast(m, list.head));
 	}
 	
 	
