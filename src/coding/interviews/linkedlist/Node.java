@@ -9,15 +9,6 @@ public class Node {
 		this.next = node;
 	}
 	
-	
-	public void print(){
-		do{
-			System.out.println(this.value + " -> ");
-		}while (this.next != null);
-		
-		System.out.println("X");
-	}
-	
 	public int getValue(){
 		return value;
 	}
