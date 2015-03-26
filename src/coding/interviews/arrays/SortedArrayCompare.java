@@ -31,18 +31,18 @@ public class SortedArrayCompare {
 			}
 		}
 		
-		common = trimArr(common, i+1);
+		common = ArrayUtil.trimArr(common, i+1);
 		
 		return common;
 	}
 	
-	private static int[] trimArr(int[] a, int cnt){
-		int[] b = new int[cnt];
+	public static void main(String[] args){
+		int[] a = new int[]{2, 4, 6, 8, 9};
+		int[] b = new int[]{4, 7, 8, 9, 12};
 		
-		for(int i=0; i<cnt; i++){
-			b[i] = a[i];
-		}
+		int[] c = getCommonElements(a, b);
 		
-		return b;
+		ArrayUtil.printArray(c);
 	}
+	
 }

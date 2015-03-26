@@ -56,7 +56,7 @@ public class ArrayCompare {
 		visitArrayCount++;
 		
 		for(int[] arr : arrays){
-			if(!areArraysEqual(arr, smallest)){
+			if(!ArrayUtil.areArraysEqual(arr, smallest)){
 				visitArrayCount++;
 				for(int i: arr){
 					Integer value = map.get(i);
@@ -106,18 +106,6 @@ public class ArrayCompare {
 		}
 	}
 	
-	private static boolean areArraysEqual(int[] a, int[] b){
-		if(a.length == b.length){
-			for(int i=0; i<a.length; i++){
-				if(a[i] != b[i]){
-					return false;
-				}
-			}
-			return true;
-		}
-		return false;
-	}
-	
 	public static void main(String[] args){
 		int[] a = new int[] {3, 5, 7, 1, 6};
 		int[] b = new int[] {5, 2, 7, 2, 6, 3};
@@ -131,17 +119,7 @@ public class ArrayCompare {
 		int[] r1 = getCommonElements(a, e);
 		int[] r2 = getCommonElements(list);
 
-		printArray(r1);
-		printArray(r2);
-	}
-	
-	private static void printArray(int[] r){
-		System.out.print("\n[");
-		int i=0;
-		for(; i<r.length-1; i++){
-			System.out.print(r[i] + ",");
-		}
-		System.out.print(r[i] + "]");
+		ArrayUtil.printArray(r1);
+		ArrayUtil.printArray(r2);
 	}
 }
-
