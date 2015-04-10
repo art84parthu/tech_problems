@@ -41,5 +41,11 @@ public class TreeNode{
 		this.right = right;
 	}
 	
+	public static void printTreeNode(TreeNode node){
+		if(node != null){
+			System.out.print(node.value);
+		}
+	}
+	
 	
 }

@@ -7,7 +7,7 @@ public class BuildBSTree {
 			root.setValue(value);
 		}else{
 			if(value <= root.getValue()){
-				root.left = insertBSTree(root.getLeft(), value);
+				root.left = insertBSTree(root.left, value);
 			}else{
 				root.right = insertBSTree(root.right, value);		
 			}
